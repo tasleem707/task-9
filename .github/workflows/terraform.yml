@@ -49,4 +49,4 @@ jobs:
         run: terraform plan 
         
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var="project_id=${{ secrets.PROJECT_ID }}" -var="region=${{ secrets.REGION }}" -var="zone=${{ secrets.GCP_ZONE }}" -var="credentials_file=credentials.json"
+        run: terraform apply -auto-approve 
