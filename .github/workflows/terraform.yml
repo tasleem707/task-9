@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    runs-on: vm-task9
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: terraform
