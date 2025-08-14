@@ -4,10 +4,11 @@ on:
   push:
     paths:
       - 'terraform/**'
+  workflow_dispatch:
 
 jobs:
   terraform:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: terraform
@@ -57,4 +58,3 @@ jobs:
           -var="region=${{ secrets.REGION }}" \
           -var="zone=${{ secrets.GCP_ZONE }}" \
           -var="credentials_file=credentials.json"
-
