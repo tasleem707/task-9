@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'K8s/**'
+  workflow_dispatch: # Manual trigger enable karega
 
 jobs:
   deploy:
