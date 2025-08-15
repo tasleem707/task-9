@@ -1,6 +1,7 @@
 name: Deploy App to GKE
 
 on:
+ workflow_dispatch:
   push:
     paths:
       - 'K8s/**'
