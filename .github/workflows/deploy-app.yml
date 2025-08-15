@@ -21,10 +21,10 @@ jobs:
           gcloud config set compute/region ${{ secrets.GCP_REGION }}
           gcloud container clusters get-credentials github-gke-cluster --zone=${{ secrets.GCP_ZONE }}
 
-      - name: Install kubectl
+      - name: Install kubectl and gke-gcloud-auth-plugin
         run: |
           sudo apt-get update
-          sudo apt-get install -y kubectl
+          sudo apt-get install -y kubectl google-cloud-sdk-gke-gcloud-auth-plugin
 
       - name: Deploy App
         run: kubectl apply -f K8s/
