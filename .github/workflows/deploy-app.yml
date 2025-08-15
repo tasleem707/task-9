@@ -4,15 +4,13 @@ on:
   push:
     paths:
       - 'K8s/**'
-  workflow_dispatch: # Manual trigger enable karega
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Setup GKE Auth
         run: |
           echo '${{ secrets.GCP_SA_KEY }}' > key.json
